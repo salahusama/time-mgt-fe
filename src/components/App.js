@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import QuadContainer from './quad/QuadContainer';
-import { getTasks, editTask, addTask, deleteTask } from '../local/tasks'
+import { getTasks, editTask, addTask, deleteTask, changeProjectName } from '../local/tasks'
 
 import './App.css'
 
@@ -26,11 +26,7 @@ function App() {
 
     const add = (taskDetails) => addTask(taskDetails).then(setTasks)
     const edit = (taskId, taskDetails) => editTask(taskId, taskDetails).then(setTasks)
-    const del = (taskId) => deleteTask(taskId).then(tasks => {
-        console.log('"del" was called. New tasks:')
-        console.log(tasks)
-        setTasks(tasks)
-    })
+    const del = (taskId) => deleteTask(taskId).then(setTasks)
 
     const tasksPerProject = getTasksPerProject(tasks)
 
@@ -51,10 +47,12 @@ function App() {
                 <QuadContainer
                     key={project}
                     projectName={project}
+                    editableProjectName
                     tasks={tasksPerProject[project]}
                     editTask={edit}
                     addTask={add}
                     deleteTask={del}
+                    changeProjectName={(newName) => changeProjectName(project, newName).then(setTasks)}
                 />
             ))}
         </div>

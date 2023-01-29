@@ -10,17 +10,31 @@
 
 .quad {
     margin: 5px;
-    max-width: 45vw;
+    /* max-width: 45vw; */
 }
 
 .project-title-container {
     background-color: brown;
     color: bisque;
     padding: 10px;
-    border: 1px solid grey;
     border-radius: 10px;
     text-align: center;
     position: relative;
+}
+
+.project-title {
+    margin: 0;
+    background-color: initial;
+    border: 0;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    color: inherit;
+    width: 100%;
+}
+
+.project-title:focus {
+    outline: none;
 }
 
 .project-title-container button {
@@ -48,12 +62,8 @@
     color: brown;
 }
 
-.project-title {
-    margin: 0;
-}
-
 @media only screen and (max-width: 500px) {
-    .project-title {
+    .project-title-container, .project-title {
         text-align: left;
     }
 }
@@ -124,7 +134,7 @@
 
 @media only screen and (max-width: 650px) {
     .item input[type=text] {
-        width: calc(100% - 44px);
+        width: calc(100% - 45px);
     }
 }
 

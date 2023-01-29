@@ -22,8 +22,6 @@ export async function deleteTask(taskId) {
 }
 
 export async function editTask(taskId, updatedTaskDetails) {
-    console.log(`Editing task (${taskId})`)
-    console.log(updatedTaskDetails)
     const { tasks } = getLocalState()
     const taskIndex = tasks.findIndex(task => task.id === taskId)
     if (taskIndex === -1) {
@@ -36,4 +34,17 @@ export async function editTask(taskId, updatedTaskDetails) {
     }
     updateLocalState({ tasks })
     return [...tasks]
+}
+
+export async function changeProjectName(oldName, newName) {
+    console.log(`Changing project name from ${oldName} to ${newName}...`)
+    const { tasks } = getLocalState()
+    const updatedTasks = tasks.map(task => {
+        if (task.project === oldName) {
+            task.project = newName
+        }
+        return task
+    })
+    updateLocalState({ tasks: updatedTasks })
+    return [...updatedTasks]
 }
