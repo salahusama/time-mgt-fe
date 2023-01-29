@@ -1,0 +1,112 @@
+.project-container {
+    width: 600px;
+}
+
+.quad-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.quad {
+    margin: 5px;
+}
+
+.project-title-container {
+    background-color: brown;
+    color: bisque;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.project-title-container button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px 0 10px 0;
+    border: none;
+    padding: 3px 10px 3px 10px;
+    font-weight: bold;
+}
+
+.project-title-container button:active {
+    background-color: bisque;
+    color: brown;
+}
+
+.project-title {
+    margin: 0;
+}
+
+.quad-title-container {
+    background-color: rgb(29, 51, 51);
+    color: white;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+}
+
+.quad-title {
+    margin: 0;
+}
+
+.quad-subtitle {
+    color: rgb(95, 135, 135);
+}
+
+.item-container {
+    overflow-y: scroll;
+    height: 200px;
+    border-radius: 0 0 5px 5px;
+    background-color: darkslategray;
+    padding-top: 3px;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 3px;
+}
+
+.item * {
+    font-weight: bold;
+    color: white;
+}
+
+.item .completed-item {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.item .action {
+    flex-grow: 1;
+}
+
+.item input {
+    height: 100%;
+    border: none;
+    background-color: inherit;
+}
+
+.item input[type=text] {
+    width: 200px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.item input[type=button] {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.item input[type=button]:active {
+    background-color: rgb(95, 135, 135);
+    border-radius: 10px;
+}
