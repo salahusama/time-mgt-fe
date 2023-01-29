@@ -10,6 +10,7 @@
 
 .quad {
     margin: 5px;
+    max-width: 45vw;
 }
 
 .project-title-container {
@@ -32,6 +33,16 @@
     font-weight: bold;
 }
 
+@media only screen and (max-width: 600px) {
+    .project-title-container {
+        border-radius: 0;
+    }
+
+    .project-title-container button {
+        border-radius: 10px 0 0 0;
+    }
+}
+
 .project-title-container button:active {
     background-color: bisque;
     color: brown;
@@ -41,11 +52,19 @@
     margin: 0;
 }
 
+@media only screen and (max-width: 500px) {
+    .project-title {
+        text-align: left;
+    }
+}
+
 .quad-title-container {
     background-color: rgb(29, 51, 51);
     color: white;
     border-radius: 5px 5px 0 0;
     padding: 10px;
+    height: 50px;
+    overflow-y: scroll;
 }
 
 .quad-title {
@@ -54,11 +73,14 @@
 
 .quad-subtitle {
     color: rgb(95, 135, 135);
+    font-size: xx-small;
+    font-weight: bold;
 }
 
 .item-container {
     overflow-y: scroll;
     height: 200px;
+    max-height: 200px;
     border-radius: 0 0 5px 5px;
     background-color: darkslategray;
     padding-top: 3px;
@@ -70,7 +92,6 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-
     padding: 3px;
 }
 
@@ -99,6 +120,12 @@
     border: 1px solid grey;
     border-radius: 3px;
     padding: 5px;
+}
+
+@media only screen and (max-width: 650px) {
+    .item input[type=text] {
+        width: calc(100% - 44px);
+    }
 }
 
 .item input[type=button] {
